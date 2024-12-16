@@ -37,7 +37,7 @@ const Cart = () => {
   useEffect(() => {
     if (user) {
       // Fetch cart data
-      fetch(`http://localhost:3001/cart/${user.userId}`)
+      fetch(`https://ecommerce-i5zq.onrender.com/${user.userId}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -61,7 +61,7 @@ const Cart = () => {
         });
 
       // Fetch products data
-      fetch('http://localhost:3001/get-product')
+      fetch('https://ecommerce-i5zq.onrender.com/get-product')
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -85,7 +85,7 @@ const Cart = () => {
   const handleUpdateQuantity = (productId, size, newQty) => {
     if (newQty < 1) return;
 
-    fetch('http://localhost:3001/update-quantity', {
+    fetch('https://ecommerce-i5zq.onrender.com/update-quantity', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ const Cart = () => {
 
   // Delete product from cart
   const handleDeleteProduct = (productId, size) => {
-    fetch('http://localhost:3001/delete-items', {
+    fetch('https://ecommerce-i5zq.onrender.com/delete-items', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
