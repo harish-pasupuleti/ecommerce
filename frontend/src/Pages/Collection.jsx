@@ -15,7 +15,7 @@ const Collection = () => {
 
   // Fetch products from the backend on component mount
   useEffect(() => {
-    axios.get('http://localhost:3001/get-product') // Endpoint for fetching products
+    axios.get('https://ecommerce-i5zq.onrender.com/get-product') // Endpoint for fetching products
       .then((response) => {
         if (response.data.success) {
           setFilterProducts(response.data.products); // Set products data
