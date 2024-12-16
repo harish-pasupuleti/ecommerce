@@ -27,7 +27,7 @@ const Login = () => {
   // Fetch user data from backend if user is already logged in
   const fetchUserData = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/auth/user/${userId}`);
+      const response = await axios.get(`https://ecommerce-i5zq.onrender.com/auth/user/${userId}`);
       setUser(response.data);
     } catch (err) {
       console.error('Error fetching user data:', err);
@@ -46,7 +46,7 @@ const Login = () => {
     try {
       if (currentState === 'Sign Up') {
         // Send Sign Up data to the backend
-        const response = await axios.post('http://localhost:3001/auth/signup', {
+        const response = await axios.post('https://ecommerce-i5zq.onrender.com/auth/signup', {
           name: formData.name,
           email: formData.email,
           password: formData.password,
@@ -66,7 +66,7 @@ const Login = () => {
         navigate('/');
       } else {
         // Send Login data to the backend
-        const response = await axios.post('http://localhost:3001/auth/login', {
+        const response = await axios.post('https://ecommerce-i5zq.onrender.com/auth/login', {
           email: formData.email,
           password: formData.password,
         });
