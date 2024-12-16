@@ -12,7 +12,7 @@ const Product = () => {
   // Function to fetch product data from the backend
   const fetchProductsData = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/product/${productId}`);
+      const response = await fetch(`https://ecommerce-i5zq.onrender.com/product/${productId}`);
       const data = await response.json();
       
       if (data.success) {
